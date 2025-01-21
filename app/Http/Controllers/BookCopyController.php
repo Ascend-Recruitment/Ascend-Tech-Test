@@ -6,7 +6,7 @@ use App\Http\Resources\BookCopyResource;
 use App\Models\BookCopy;
 use Illuminate\Http\Request;
 
-class BookCopiesController extends Controller
+class BookCopyController extends Controller
 {
     public function index(Request $request)
     {

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\BookCopiesController;
-use App\Http\Controllers\BorrowRequestsController;
+use App\Http\Controllers\BookCopyController;
+use App\Http\Controllers\BorrowRequestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -19,8 +19,8 @@ use Inertia\Inertia;
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [BookCopiesController::class, 'index'])->name('book-copies.index');
-    Route::post('/borrow-requests', [BorrowRequestsController::class, 'store'])->name('borrow-requests.store');
+    Route::get('/', [BookCopyController::class, 'index'])->name('book-copies.index');
+    Route::post('/borrow-requests', [BorrowRequestController::class, 'store'])->name('borrow-requests.store');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

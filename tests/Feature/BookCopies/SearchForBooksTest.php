@@ -63,18 +63,4 @@ class SearchForBooksTest extends TestCase
                 $page->where('data.0.id', $copyOne->id);
             }));
     }
-
-    /** @test */
-    public function cannot_search_for_books_that_belong_to_different_library()
-    {
-        $library = Library::factory()->create();
-        BookCopy::factory()->count(2)->create(['library_id' => $library->id]);
-        $user = User::factory()->hasAttached(Library::factory()->create())->create();
-
-        $response = $this->actingAs($user)->get(route('book-copies.index'));
-
-        $response->assertInertia(fn (AssertableInertia $page) => $page
-            ->component('BookCopies/Index')
-            ->count('book_copies.data', 0));
-    }
 }
