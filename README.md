@@ -11,7 +11,7 @@
 - Run `npm install`
 - Compile assets: run `npm run dev`
 - Login with the following credentials:
-      - Email: `test.user@test.com`
+  - Email: `test.user@test.com`
   - Password: `secret1234`
 
 ## Introduction
